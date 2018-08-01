@@ -1,0 +1,26 @@
+# general
+experiment_name: "e0003"     # prefix of all artifacts ('' means None, create next name)
+seed: 42                     # random seed
+with_cuda: False              # CUDA training
+path_save: "../experiments/"    # path to save models, checkpoints, logs
+
+TRAIN:
+  resume: ""
+  epochs: 30
+  lr: 0.001
+  momentum: 0.9
+
+MODEL:
+  name: "lenet_in3x32x32_out10"
+
+DATASET:
+  name: "dtd"
+  path: "../data/dtd"
+  batch_size: 32       # input batch size for training
+  batch_size_val: 64   # input batch size for testing
+  download: False
+
+LOG:
+  iter_interval: 10     # how often (iter) display training details
+  path: "../experiments/"
+  visdom: True
