@@ -14,7 +14,6 @@ def train_epoch(train_loader, model, criterion, optimizer, epoch, device, log, t
     for i, (input_data, target) in enumerate(train_loader):
         target = target.to(device)
         input_data = input_data.to(device)
-
         # compute output
         output = model(input_data)
         loss = criterion(output, target)
